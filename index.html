@@ -10,7 +10,692 @@
     :root {
       --bg: #fff8e6;
       --line: #cfe3f5;
+      --margin: #ff9aa2;<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Happy Teachers' Day! Ma'am Racquel </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #fff8e6;
+      --line: #cfe3f5;
       --margin: #ff9aa2;
+      --ink: #2d2a4a;
+      --card: #ffffff;
+      --red: #ff6b6b;
+      --yel: #ffd93d;
+      --grn: #6bcb77;
+      --blu: #4d96ff;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #1d2340;
+        --line: #2c3566;
+        --margin: #c9677a;
+        --ink: #fff6dc;
+        --card: #2a3260
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #1d2340;
+      --line: #2c3566;
+      --margin: #c9677a;
+      --ink: #fff6dc;
+      --card: #2a3260
+    }
+
+    html {
+      height: 100%;
+      scroll-padding-top: env(safe-area-inset-top, 0px)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: "Fredoka", "Trebuchet MS", "Comic Sans MS", system-ui, sans-serif;
+      color: var(--ink);
+      background-color: var(--bg);
+      background-image: radial-gradient(ellipse at 12% 8%, rgba(255, 217, 61, .2), transparent 38%), radial-gradient(ellipse at 92% 28%, rgba(77, 150, 255, .13), transparent 35%);
+      background-attachment: fixed;
+      overflow-x: hidden
+    }
+
+    #fx {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 5
+    }
+
+    #fx i {
+      position: absolute;
+      top: -30px;
+      animation: fall linear forwards
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(540deg)
+      }
+    }
+
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 26px 20px 32px;
+      min-height: calc(100svh - 82px)
+    }
+
+    .screen {
+      display: none
+    }
+
+    .screen.on {
+      display: block;
+      animation: screen-in .35s ease both
+    }
+
+    @keyframes screen-in {
+      from { opacity: 0; transform: translateY(8px) }
+      to { opacity: 1; transform: translateY(0) }
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin: 3vh 0 22px;
+      padding: 28px 22px 24px;
+      border: 1px solid rgba(45, 42, 74, .1);
+      border-radius: 28px;
+      background: linear-gradient(135deg, #fff 0%, #fff1cf 100%);
+      color: #2d2a4a;
+      text-align: center;
+      box-shadow: 0 16px 38px rgba(45, 42, 74, .12)
+    }
+
+    .hero:after {
+      content: "✦";
+      position: absolute;
+      top: 8px;
+      right: 18px;
+      color: #f3bd35;
+      font-size: 32px;
+      opacity: .7
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #665d81;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .hero h1 { margin: 0 0 14px }
+
+    .subject-badge {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 0 12px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: #2d2a4a;
+      color: #fff6dc;
+      font-size: 16px;
+      font-weight: 700
+    }
+
+    h1 {
+      font-size: clamp(38px, 11vw, 54px);
+      line-height: 1.05;
+      margin: 4vh 0 10px;
+      font-weight: 700
+    }
+
+    h1 span {
+      display: inline-block;
+      animation: bob 2.4s ease-in-out infinite
+    }
+
+    h1 span:nth-child(2n) {
+      animation-delay: .3s
+    }
+
+    @keyframes bob {
+      50% {
+        transform: translateY(-6px) rotate(-3deg)
+      }
+    }
+
+    h2 {
+      font-size: 34px;
+      margin: 6px 0 6px;
+      font-weight: 700
+    }
+
+    .sub {
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0 0 22px
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 14px
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 14px 16px;
+      border: 0;
+      border-radius: 20px;
+      font: inherit;
+      font-size: 20px;
+      font-weight: 700;
+      color: #2d2a4a;
+      cursor: pointer;
+      text-align: left;
+      box-shadow: 0 6px 0 rgba(0, 0, 0, .18);
+      transition: transform .1s, box-shadow .1s;
+      position: relative
+    }
+
+    .btn:active {
+      transform: translateY(5px);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, .18)
+    }
+
+    .btn .e {
+      font-size: 40px
+    }
+
+    .btn .t {
+      margin-left: auto;
+      font-size: 28px;
+      opacity: 0
+    }
+
+    .btn.done .t {
+      opacity: 1
+    }
+
+    .b1 {
+      background: var(--yel)
+    }
+
+    .b2 {
+      background: var(--grn)
+    }
+
+    .b3 {
+      background: var(--blu);
+      color: #fff
+    }
+
+    .last {
+      display: none;
+      background: var(--red);
+      color: #fff;
+      margin-top: 20px;
+      animation: wig 1.4s ease-in-out infinite
+    }
+
+    .last.show {
+      display: flex
+    }
+
+    @keyframes wig {
+      20% {
+        transform: rotate(-2deg)
+      }
+
+      40% {
+        transform: rotate(2deg)
+      }
+
+      60% {
+        transform: rotate(0)
+      }
+    }
+
+    :focus-visible {
+      outline: 4px solid var(--blu);
+      outline-offset: 3px
+    }
+
+    .back {
+      border: 0;
+      background: none;
+      font: inherit;
+      font-size: 18px;
+      color: inherit;
+      padding: 6px 0;
+      cursor: pointer;
+      opacity: .8
+    }
+
+    /* gifts */
+    .box {
+      display: block;
+      margin: 18px auto;
+      font-size: 120px;
+      line-height: 1;
+      border: 0;
+      background: none;
+      cursor: pointer;
+      animation: wob 1.6s ease-in-out infinite
+    }
+
+    @keyframes wob {
+      25% {
+        transform: rotate(-6deg)
+      }
+
+      75% {
+        transform: rotate(6deg)
+      }
+    }
+
+    .tiles {
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 10px 0
+    }
+
+    .tiles.on {
+      display: grid
+    }
+
+    .tile {
+      aspect-ratio: 1;
+      font-size: 46px;
+      border: 3px dashed var(--ink);
+      border-radius: 22px;
+      background: var(--card);
+      cursor: pointer;
+      animation: pop .45s backwards
+    }
+
+    .tile.seen {
+      border-style: solid;
+      border-color: var(--grn);
+      background: #e9fbe9
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(0)
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 3px solid var(--ink);
+      border-radius: 22px;
+      padding: 18px;
+      font-size: 22px;
+      line-height: 1.35;
+      box-shadow: 6px 6px 0 var(--ink);
+      transform: rotate(-1deg);
+      min-height: 100px
+    }
+
+    .card b {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 4px
+    }
+
+    .count {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 17px
+    }
+
+    /* letter */
+    .letter p {
+      margin: 0 0 10px;
+      font-size: 26px;
+      line-height: 1.4;
+      background: var(--card);
+      border: 3px solid var(--ink);
+      border-radius: 20px;
+      padding: 10px 16px;
+      width: fit-content;
+      max-width: 100%;
+      animation: pop .35s backwards
+    }
+
+    .letter p:nth-child(2n) {
+      background: #fff3b8;
+      color: #2d2a4a;
+      margin-left: auto
+    }
+
+    .nx {
+      margin-top: 14px
+    }
+
+    .go {
+      display: block;
+      margin: 20px auto 0;
+      padding: 14px 28px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--red);
+      color: #fff;
+      font: 700 20px "Fredoka", sans-serif;
+      box-shadow: 0 5px 0 rgba(0, 0, 0, .2);
+      cursor: pointer
+    }
+
+    .go:active {
+      transform: translateY(4px);
+      box-shadow: none
+    }
+
+    /* report card */
+    .rc {
+      display: grid;
+      gap: 10px;
+      margin-top: 6px
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--card);
+      border: 3px solid var(--ink);
+      border-radius: 18px;
+      font: inherit;
+      font-size: 20px;
+      color: inherit;
+      cursor: pointer;
+      text-align: left
+    }
+
+    .stamp {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--red);
+      border: 4px solid var(--red);
+      border-radius: 10px;
+      padding: 0 10px;
+      transform: rotate(-8deg) scale(0);
+      transition: transform .3s cubic-bezier(.3, 1.8, .6, 1);
+      min-width: 64px;
+      text-align: center
+    }
+
+    .row.on .stamp {
+      transform: rotate(-8deg) scale(1)
+    }
+
+    /* finale */
+    .cert {
+      text-align: center;
+      background: #fffdf3;
+      color: #2d2a4a;
+      border: 6px double #e0a800;
+      border-radius: 18px;
+      padding: 26px 16px;
+      box-shadow: 0 10px 0 rgba(0, 0, 0, .15);
+      margin-top: 3vh;
+      transform: rotate(-1deg)
+    }
+
+    .cert .m {
+      font-size: 76px;
+      line-height: 1;
+      animation: bob 2s ease-in-out infinite
+    }
+
+    .cert h1 {
+      margin: 8px 0;
+      font-size: clamp(30px, 9vw, 42px)
+    }
+
+    .cert .nm {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--red);
+      margin: 6px 0
+    }
+
+    .cert p {
+      margin: 6px 0;
+      font-size: 19px
+    }
+
+    .site-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 5px 12px;
+      min-height: 62px;
+      padding: 12px 20px;
+      border-top: 1px solid rgba(45, 42, 74, .12);
+      color: var(--ink);
+      font-size: 14px;
+      text-align: center
+    }
+
+    .site-footer p { margin: 0 }
+
+    .site-footer a {
+      color: var(--blu);
+      font-weight: 700;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        animation: none !important;
+        transition: none !important
+      }
+
+      .stamp {
+        transition: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="fx" aria-hidden="true"></div>
+  <main>
+
+    <section id="home" class="screen on">
+      <div class="hero">
+        <p class="eyebrow">A little thank-you from your student</p>
+        <h1 id="title"></h1>
+        <p class="subject-badge" id="subjectBadge"></p>
+        <p class="sub" id="welcome"></p>
+      </div>
+      <div class="menu">
+        <button class="btn b1" data-go="gifts"><span class="e">🎁</span>Gifts<span class="t">✅</span></button>
+        <button class="btn b2" data-go="letter"><span class="e">💌</span>My message<span class="t">✅</span></button>
+        <button class="btn b3" data-go="report"><span class="e">📝</span>Your report card<span
+            class="t">✅</span></button>
+      </div>
+      <button class="btn last" id="lastBtn" data-go="finale"><span class="e">🏆</span>Open your prize!</button>
+    </section>
+
+    <section id="gifts" class="screen">
+      <button class="back" data-go="home">← back</button>
+      <h2>Pick a gift!</h2>
+      <p class="sub" id="giftSub">Tap the box to open it.</p>
+      <button class="box" id="box" aria-label="Open the gift box">🎁</button>
+      <div class="tiles" id="tiles"></div>
+      <div class="card" id="giftCard" hidden></div>
+      <div class="count" id="giftCount"></div>
+    </section>
+
+    <section id="letter" class="screen">
+      <button class="back" data-go="home">← back</button>
+      <h2 id="dear"></h2>
+      <div class="letter" id="lt"></div>
+      <button class="go nx" id="nextMsg">Next ➜</button>
+    </section>
+
+    <section id="report" class="screen">
+      <button class="back" data-go="home">← back</button>
+      <h2>Teacher's report card</h2>
+      <p class="sub">Tap each one to give a grade!</p>
+      <div class="rc" id="rc"></div>
+      <div class="count" id="rcCount"></div>
+    </section>
+
+    <section id="finale" class="screen">
+      <div class="cert">
+        <div class="m">🏅</div>
+        <h1>World's Best Teacher</h1>
+        <p>This award goes to</p>
+        <div class="nm" id="certName"></div>
+        <p id="awardReason"></p>
+        <p>Thank you for teaching me! 💛</p>
+        <p><b id="certFrom"></b></p>
+      </div>
+      <button class="go" id="again">🎉 More confetti!</button>
+      <button class="go" data-go="home" style="background:var(--blu)">Go back</button>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <p>Made with love by Esme 💛</p>
+    <a href="#" aria-label="Facebook page link placeholder">Facebook page link (add later)</a>
+  </footer>
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search);
+      var TO = (q.get("to") || "Ma'am Racquel").slice(0, 40);       // use ?to=Ma'am Santos&from=Mia
+      var FROM = (q.get("from") || "Esme").slice(0, 40);
+      var SUBJECT = "MAPEH";
+      var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var $ = function (s) { return document.querySelector(s) };
+      var done = { gifts: false, letter: false, report: false };
+
+      $("#title").innerHTML = ("Happy Teachers' Day, " + TO + "!").split(" ").map(function (w) { return "<span>" + w + "</span>" }).join(" ");
+      $("#subjectBadge").textContent = "🎨 " + SUBJECT;
+      $("#welcome").textContent = "Thank you for filling MAPEH with creativity, movement, music, and joy!";
+      $("#dear").textContent = "Dear " + TO + ",";
+      $("#certName").textContent = TO;
+      $("#certFrom").textContent = "From: " + FROM;
+      $("#awardReason").textContent = "for making art, music, and movement a joy to learn.";
+
+      function confetti(n) {
+        if (reduce) return; var f = $("#fx"), c = ["#ff6b6b", "#ffd93d", "#6bcb77", "#4d96ff", "#ff9aa2"], e = ["⭐", "🎈", "💛", "✨"];
+        for (var i = 0; i < n; i++) {
+          var s = document.createElement("i");
+          if (i % 3 === 0) { s.textContent = e[i % e.length]; s.style.fontSize = "22px" } else { s.style.width = "10px"; s.style.height = "14px"; s.style.background = c[i % c.length]; s.style.borderRadius = "2px" }
+          s.style.left = Math.random() * 100 + "%"; s.style.animationDuration = (2.5 + Math.random() * 2.5) + "s"; s.style.animationDelay = (Math.random() * .8) + "s";
+          f.appendChild(s); setTimeout(function (el) { el.remove() }, 6500, s)
+        }
+      }
+      function show(id) {
+        document.querySelectorAll(".screen").forEach(function (s) { s.classList.toggle("on", s.id === id) });
+        scrollTo(0, 0);
+        if (id === "letter") startLetter();
+        if (id === "finale") confetti(60);
+        if (id === "home") refresh();
+      }
+      function refresh() {
+        document.querySelectorAll(".btn[data-go]").forEach(function (b) { b.classList.toggle("done", !!done[b.dataset.go]) });
+        var all = done.gifts && done.letter && done.report;
+        $("#lastBtn").classList.toggle("show", all);
+        if (all && !refresh.p) { refresh.p = 1; confetti(30) }
+      }
+      document.addEventListener("click", function (e) { var b = e.target.closest("[data-go]"); if (b) show(b.dataset.go) });
+      $("#again").addEventListener("click", function () { confetti(70) });
+
+      /* gifts */
+      var gifts = [
+        ["🍎", "An apple", "Thank you for helping me grow through art, music, and movement."],
+        ["⭐", "A gold star", "You make every MAPEH activity shine with fun."],
+        ["🌻", "A flower", "Thank you for helping my creativity bloom."],
+        ["✏️", "A pencil", "You inspire me to express myself and keep trying."],
+        ["💖", "A big heart", "Thank you for making everyone feel included in class."],
+        ["🍪", "A cookie", "A sweet thank-you for making MAPEH so enjoyable!"]
+      ];
+      var seen = {};
+      $("#box").addEventListener("click", function () {
+        var b = this; confetti(20); b.style.display = "none";
+        var t = $("#tiles"); t.classList.add("on"); t.innerHTML = ""; $("#giftSub").textContent = "Tap each present to open it!";
+        gifts.forEach(function (g, i) {
+          var el = document.createElement("button"); el.className = "tile"; el.textContent = "🎁"; el.setAttribute("aria-label", "Gift " + (i + 1));
+          el.style.animationDelay = (i * .08) + "s";
+          el.addEventListener("click", function () {
+            el.textContent = g[0]; el.classList.add("seen"); seen[i] = 1;
+            var c = $("#giftCard"); c.hidden = false; c.innerHTML = "<b></b><span></span>"; c.firstChild.textContent = g[0] + " " + g[1]; c.lastChild.textContent = g[2];
+            var n = Object.keys(seen).length;
+            $("#giftCount").textContent = n + " of " + gifts.length + " opened";
+            if (n === gifts.length) { done.gifts = true; confetti(30); $("#giftCount").textContent = "You opened them all! 🎉 Go back for more." }
+          });
+          t.appendChild(el);
+        });
+      });
+
+      /* letter */
+      var msgs = [
+        "Thank you, " + TO + "!",
+        "You make MAPEH a wonderful mix of creativity and fun.",
+        "You inspire me to express myself through art and music.",
+        "You remind me that moving, practicing, and trying again are worth it.",
+        "Thank you for making every activity feel welcoming.",
+        "Your class helps me discover what I can do.",
+        "Happy Teachers' Day! — " + FROM
+      ];
+      var mi = 0;
+      function startLetter() { mi = 0; $("#lt").innerHTML = ""; var b = $("#nextMsg"); b.style.display = "block"; b.textContent = "Next ➜"; addMsg() }
+      function addMsg() {
+        var p = document.createElement("p"); p.textContent = msgs[mi++]; $("#lt").appendChild(p);
+        if (mi >= msgs.length) { $("#nextMsg").style.display = "none"; done.letter = true; confetti(25) }
+      }
+      $("#nextMsg").addEventListener("click", function () { if (mi < msgs.length) addMsg() });
+
+      /* report card */
+      var subs = ["Making MAPEH fun", "Inspiring my creativity", "Sharing music and movement", "Encouraging me to try", "Making everyone feel included"];
+      var rn = {};
+      subs.forEach(function (s, i) {
+        var r = document.createElement("button"); r.className = "row";
+        r.innerHTML = "<span></span><span class='stamp'>A+</span>"; r.firstChild.textContent = s;
+        r.addEventListener("click", function () {
+          if (rn[i]) return; rn[i] = 1; r.classList.add("on");
+          var n = Object.keys(rn).length; $("#rcCount").textContent = n + " of " + subs.length + " graded";
+          if (n === subs.length) { done.report = true; confetti(30); $("#rcCount").textContent = "A+ in everything! ⭐ Go back." }
+        });
+        $("#rc").appendChild(r);
+      });
+    })();
+  </script>
+</body>
+
+</html>
       --ink: #2d2a4a;
       --card: #ffffff;
       --red: #ff6b6b;
